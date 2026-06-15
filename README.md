@@ -7,7 +7,7 @@ This repository contains a **free sample of 100 logs** to demonstrate the data s
 ---
 
 ## 🚀 Need More Data? Choose Your Pack!
-If you are running heavy load tests, training AI models, or benchmarking high-throughput platforms (like Tinybird, Devo, or ClickHouse), 100 logs won't be enough. We offer flexible packages tailored to your project scale:
+If you are running heavy load tests, training AI models, or benchmarking high-throughput platforms, 100 logs won't be enough. We offer flexible packages tailored to your project scale:
 
 ### 📊 Pricing & Packages
 * **📦 Starter Pack (10,000+ rows):** **€29** — Perfect for quick schema testing and local script validations.
